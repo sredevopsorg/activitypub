@@ -1,15 +1,16 @@
 # This workflow builds a multi-arch Docker image using GitHub Actions and separated Github Runners with native support for ARM64 and AMD64 architectures, without using QEMU emulation.
 # It uses Docker Buildx to build and push the image to GitHub Container Registry (GHCR).
-name: Build multi arch Docker Image with separate Github Runners
+name: Build multi arch ActivityPub Docker Image with separate Github Runners
 
 on:
   workflow_dispatch:
   push:
     branches:
       - main
-    paths:
-      - 'Dockerfile'
-      - '.github/workflows/multi-build.yaml'
+    tags:
+      - 'v*'
+    paths-ignore:
+      - 'migrate/**'
 env:
   # The name of the Docker image to be built and pushed to GHCR
   # The image name is derived from the GitHub repository name and the GitHub Container Registry (GHCR) URL.
@@ -213,6 +214,7 @@ jobs:
           tags: |
             type=raw,value=main,enable=${{ github.ref_name == 'main' }}
             type=raw,value=latest,enable=${{ github.ref_name == 'main' }}
+            type=ref,event=tag,enable=${{ startsWith(github.ref, 'refs/tags/v') }},format={{ ref_name }}
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@e468171a9de216ec08956ac3ada2f0791b6bd435 # v3.11.1

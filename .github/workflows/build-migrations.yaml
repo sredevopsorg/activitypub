@@ -138,7 +138,8 @@ jobs:
           outputs: type=image,name=${{ env.GHCR_IMAGE }},push-by-digest=true,name-canonical=true,push=true,oci-mediatypes=true
           cache-from: type=gha,scope=${{ github.repository }}-${{ github.ref_name }}-${{ matrix.platform }}
           cache-to: type=gha,scope=${{ github.repository }}-${{ github.ref_name }}-${{ matrix.platform }}
-
+          build-args: |
+            ARCH=${{ env.PLATFORM_PAIR }}
 
       - name: Export digest
         # This step exports the digest of the built image to a file.

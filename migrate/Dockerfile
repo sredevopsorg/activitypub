@@ -1,4 +1,4 @@
-FROM debian:bookworm-slim@latest as builder
+FROM debian:bookworm-slim as builder
 
 # Set the ARCH variable by executing a command on the host.
 RUN --mount=type=bind,source=/etc/os-release,target=/etc/os-release,readonly \
@@ -7,7 +7,7 @@ RUN --mount=type=bind,source=/etc/os-release,target=/etc/os-release,readonly \
     mv migrate /usr/bin/
 
 # Final stage
-FROM debian:bookworm-slim@latest
+FROM debian:bookworm-slim
 
 COPY --from=builder /usr/bin/migrate /usr/bin/migrate
 

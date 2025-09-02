@@ -1,7 +1,10 @@
-FROM node:22.18.0-alpine@sha256:1b2479dd35a99687d6638f5976fd235e26c5b37e8122f786fcd5fe231d63de5b
+FROM node:jod-bookworm@sha256:6fe286835c595e53cdafc4889e9eff903dd3008a3050c1675809148d8e0df805 AS build-env
 
-RUN apk add python3 g++ make
-RUN apk add --no-cache ca-certificates
+# RUN apk add python3 g++ make
+# RUN apk add --no-cache ca-certificates
+
+RUN apt update && apt install -y python3 g++ make
+RUN apt install -y ca-certificates
 
 WORKDIR /opt/activitypub
 
@@ -19,8 +22,16 @@ COPY vitest.config.ts vitest.config.ts
 ENV NODE_ENV=production
 RUN yarn build
 
-RUN apk del python3 g++ make
+# RUN apk del python3 g++ make
+
+FROM gcr.io/distroless/nodejs22-debian12:latest@sha256:4c6848a24760c190338d20c3fd2e987431f8fe05c4067a114801cb66ca0018a1 AS runtime 
+
+WORKDIR /opt/activitypub
+
+COPY --from=build-env /opt/activitypub .
+
+ENV NODE_ENV=production
 
 EXPOSE 8080
 
-CMD ["node", "dist/app.js"]
+CMD ["dist/app.js"]

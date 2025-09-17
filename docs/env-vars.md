@@ -46,6 +46,22 @@ This ActivityPub service uses a variety of environment variables to configure it
 - `MYSQL_USER`* - MySQL database username
 - `MYSQL_PASSWORD`* - MySQL database password
 - `MYSQL_DATABASE`* - MySQL database name
+- `MYSQL_CONN_POOL_MIN` - Minimum number of connections in the MySQL connection pool
+  - Default: `1`
+- `MYSQL_CONN_POOL_MAX` - Maximum number of connections in the MySQL connection pool
+  - Default: `200`
+- `MYSQL_CONN_POOL_ACQUIRE_TIMEOUT` - Timeout in milliseconds for acquiring a connection from the pool
+  - Default: `30000` (30 seconds)
+- `MYSQL_CONN_POOL_CREATE_TIMEOUT` - Timeout in milliseconds for creating a new connection
+  - Default: `30000` (30 seconds)
+- `MYSQL_CONN_POOL_DESTROY_TIMEOUT` - Timeout in milliseconds for destroying a connection
+  - Default: `5000` (5 seconds)
+- `MYSQL_CONN_POOL_IDLE_TIMEOUT` - Time in milliseconds before idle connections are destroyed
+  - Default: `30000` (30 seconds)
+- `MYSQL_CONN_POOL_REAP_INTERVAL` - How often in milliseconds to check for idle connections to destroy
+  - Default: `1000` (1 second)
+- `MYSQL_CONN_POOL_CREATE_RETRY_INTERVAL` - Time in milliseconds to wait before retrying a failed connection create
+  - Default: `200` (200 milliseconds)
 
 ## Redis Configuration
 

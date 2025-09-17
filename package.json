@@ -42,13 +42,13 @@
     "src"
   ],
   "devDependencies": {
-    "@biomejs/biome": "2.2.2",
+    "@biomejs/biome": "2.2.4",
     "@cucumber/cucumber": "11.3.0",
     "@faker-js/faker": "9.9.0",
     "@fedify/cli": "1.7.8",
     "@types/html-to-text": "9.0.4",
     "@types/jsonwebtoken": "9.0.10",
-    "@types/node": "20.19.11",
+    "@types/node": "20.19.15",
     "@types/node-jose": "1.1.13",
     "@types/sanitize-html": "2.16.0",
     "@types/sinon": "17.0.4",
@@ -63,14 +63,14 @@
     "wiremock-captain": "3.6.1"
   },
   "dependencies": {
-    "@fedify/fedify": "1.7.9",
+    "@fedify/fedify": "1.8.8",
     "@fedify/redis": "0.4.0",
     "@google-cloud/opentelemetry-cloud-trace-exporter": "2.4.1",
     "@google-cloud/opentelemetry-cloud-trace-propagator": "0.20.0",
     "@google-cloud/profiler": "6.0.3",
     "@google-cloud/pubsub": "4.11.0",
-    "@google-cloud/storage": "7.17.0",
-    "@hono/node-server": "1.19.1",
+    "@google-cloud/storage": "7.17.1",
+    "@hono/node-server": "1.19.3",
     "@js-temporal/polyfill": "0.5.1",
     "@logtape/logtape": "0.12.2",
     "@opentelemetry/api": "1.9.0",
@@ -81,15 +81,15 @@
     "@sentry/node": "8.55.0",
     "awilix": "12.0.5",
     "es-toolkit": "1.39.10",
-    "hono": "4.9.5",
+    "hono": "4.9.7",
     "html-to-text": "9.0.5",
     "ioredis": "5.7.0",
     "jsonwebtoken": "9.0.2",
     "knex": "3.1.0",
-    "ky": "1.9.1",
+    "ky": "1.10.0",
     "linkify-html": "4.3.2",
     "linkifyjs": "4.3.2",
-    "mysql2": "3.14.4",
+    "mysql2": "3.14.5",
     "node-html-parser": "7.0.1",
     "node-jose": "2.2.0",
     "reflect-metadata": "0.2.2",
@@ -98,6 +98,6 @@
     "url-regex": "5.0.0",
     "uuid": "10.0.0",
     "x-forwarded-fetch": "0.2.0",
-    "zod": "3.25.76"
+    "zod": "4.1.9"
   }
 }

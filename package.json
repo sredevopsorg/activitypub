@@ -54,7 +54,7 @@
     "@types/uuid": "10.0.0",
     "@vitest/coverage-v8": "2.1.9",
     "concurrently": "9.2.1",
-    "esbuild": "0.25.9",
+    "esbuild": "0.25.10",
     "nock": "14.0.10",
     "typescript": "5.8.3",
     "vite-tsconfig-paths": "5.1.4",
@@ -62,7 +62,7 @@
     "wiremock-captain": "3.6.1"
   },
   "dependencies": {
-    "@fedify/fedify": "1.8.8",
+    "@fedify/fedify": "1.8.15",
     "@fedify/redis": "0.4.0",
     "@google-cloud/opentelemetry-cloud-trace-exporter": "2.4.1",
     "@google-cloud/opentelemetry-cloud-trace-propagator": "0.20.0",
@@ -80,7 +80,7 @@
     "@sentry/node": "8.55.0",
     "awilix": "12.0.5",
     "es-toolkit": "1.39.10",
-    "hono": "4.9.10",
+    "hono": "4.11.10",
     "html-to-text": "9.0.5",
     "ioredis": "5.8.1",
     "jsonwebtoken": "9.0.2",
